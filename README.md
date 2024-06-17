@@ -28,7 +28,7 @@ Having the following prerequisites:
 
 1. clone the repository: ```git clone```
 
-2. then cd into it: ```cd ...```
+2. then cd into it: ```cd```
 
 3. install flask: ```pip install flask```
 
