@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Advanced Search
+{% endblock %}
+
+{% block buttons %}
+<a href="{{ url_for('index') }}">
+    <button class="google_button">Google Search</button>
+</a>
+<a href="{{ url_for('image_search') }}">
+    <button class="google_button">Image Search</button>
+</a>
+{% endblock %}
+
+{% block content %}
+<!-- section that displays "Advanced search" in the same style as
+  google's own advanced search: https://www.google.com/advanced_search -->
+<div class="title_advanced_search">
+    Advanced search
+</div>
+<!-- black 1px divider to mimic the look of google's advanced search page -->
+<div style="border-bottom: 1px solid black; margin-bottom: 0px;"></div>
+
+
+<!-- parameter for advanced search query
+        from the following stack overflow article:
+        https://stackoverflow.com/questions/62691544/format-of-url-for-advanced-google-search-engine-query
+
+        basically:
+        "as_q" = all these words
+        "as_epq" = this exact word or phrase
+        "as_oq" = any of these words
+        "as_eq" = none of these words
+    -->
+<form action="https://www.google.com/search" method="GET">
+    <div class="grid-container">
+        <!-- Creating a grid with 3 columns to mimic the google advanced search look
+            added a lot of css which mostly has been found on the google advanced search and then
+            adjusted by trial and error to get the look right.
+            Actually tried it with a table first, but realised a grid is
+            the easier way to go here.-->
+        <div class="grid-item left-header grid-title">Find pages with...</div>
+        <div class="grid-item"></div>
+        <div class="grid-item right-header grid-title">To do this in the search box</div>
+
+        <div class="grid-item left-column">All these words:</div>
+        <div class="grid-item middle-column"><input class="custom-input" name="as_q" type="text" autocomplete="off">
+        </div>
+        <div class="grid-item right-column">
+            <small class="right-column-info-text">Type the important words: <span
+                    class="right-column-example-search-text">tri-colour rat terrier</span></small>
+        </div>
+
+        <div class="grid-item left-column">This exact word or phrase:</div>
+        <div class="grid-item middle-column"><input class="custom-input" name="as_epq" type="text" autocomplete="off">
+        </div>
+        <div class="grid-item right-column">
+            <small class="right-column-info-text">Put exact words in quotes: <span
+                    class="right-column-example-search-text">"rat terrier"</span></small>
+        </div>
+
+        <div class="grid-item left-column">Any of these words:</div>
+        <div class="grid-item middle-column"><input class="custom-input" name="as_oq" type="text" autocomplete="off">
+        </div>
+        <div class="grid-item right-column">
+            <small class="right-column-info-text">Type <span class="right-column-example-search-text">OR</span> between
+                all the words you want: <span class="right-column-example-search-text">miniature OR
+                    standard</span></small>
+        </div>
+
+        <div class="grid-item left-column">None of these words:</div>
+        <div class="grid-item middle-column"><input class="custom-input" name="as_eq" type="text" autocomplete="off">
+        </div>
+        <div class="grid-item right-column">
+            <small class="right-column-info-text">Put a minus sign just before words that you don't want: <span
+                    class="right-column-example-search-text">-rodent, -"Jack Russell"</span></small>
+        </div>
+
+        <div class="grid-item left-column"></div>
+        <div class="grid-item middle-column text-end">
+            <input class="advanced_search_button" value="Advanced Search" type="submit">
+        </div>
+        <div class="grid-item right-column"></div>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,240 @@
+/* pages that have been inspected to get the same css elements as google:
+1) https://www.google.com/
+2) https://images.google.com/
+3)
+ */
+
+/* background color for all pages, got the color code from inspecting google serach page */
+.bg_pages {
+    background-color: #202124;
+}
+
+/* google button css, got it from inspecting the google serach page */
+.google_button {
+    background-color: #303134;
+    border: 1px solid #303134;
+    border-radius: 4px;
+    color: #e8eaed;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin: 5px 5px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 150px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* css for the search form, got css from the serach page + adjusted a bit */
+.form-control,
+.form-control:focus {
+    background-color: transparent;
+    color: #e8eaed;
+    border: 1px solid #e8eaed;
+    box-shadow: none;
+    width: 90%;
+    max-width: 582px;
+    height: 46px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.form-control::placeholder {
+    color: #b0b3b8;
+    opacity: 1;
+    text-align: center;
+}
+
+
+/* index.html specific css */
+/* index.html specific css */
+/* index.html specific css */
+/* index.html specific css */
+/* index.html specific css */
+/* https://www.google.com/ */
+
+/* making sure the logo is having the max sizes that are the same as google*/
+.index_logo_image {
+    max-height: 100px;
+    max-width: 296px;
+    position: relative;
+}
+
+/* google images search specific css */
+/* google images search specific css */
+/* google images search specific css */
+/* google images search specific css */
+/* google images search specific css */
+/* https://images.google.com/ */
+
+/*
+the specificatons of the three classes
+below are from google themselves.
+
+i inspected the google images search page and
+used the same css that they used.
+*/l
+.div_google_images {
+    height: 92px;
+    width: 272px;
+    position: relative;
+}
+
+.google_images_image {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.text_google_images {
+    color: #4487f6;
+    font: 16px/16px roboto-regular, arial, sans-serif;
+    position: absolute;
+    left: 215px;
+    bottom: 0;
+}
+
+/* google advanced search specific css */
+/* google advanced search specific css */
+/* google advanced search specific css */
+/* google advanced search specific css */
+/* google advanced search specific css */
+/* https://www.google.com/advanced_search */
+
+.title_advanced_search {
+    font-family: Arial, sans-serif;
+    background: none;
+    color: #f28b82;
+    font-size: 20px;
+    /* create similar spacing look to google's advanced search */
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+/* grid container for the entire form */
+.grid-container {
+    display: grid;
+    padding: 40px;
+    grid-column-gap: 15px;
+    grid-row-gap: 10px;
+    /* setting the grid template columns */
+    grid-template-columns: 182px minmax(0, 520px) minmax(auto, 1fr);
+    align-items: center;
+}
+
+/* css for the grid titles */
+.grid-title {
+    /* had to use !important to make it work */
+    color: #e8eaed !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 16px !important;
+    margin-bottom: 10px;
+}
+
+
+/* got css for this from inspecting advances search */
+.left-header, .left-column {
+    /* specyfiying which grid-column it should apply to */
+    grid-column: 1;
+    width: 182px;
+    font-family: Arial, sans-serif;
+    color: #969ba1;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+/* got css for this from inspecting advances search */
+.middle-column {
+    /* specyfiying which grid-column it should apply to */
+    grid-column: 2;
+    max-width: 520px;
+}
+
+/* got css for this from inspecting advances search */
+.right-header, .right-column {
+    /* specyfiying which grid-column it should apply to */
+    grid-column: 3;
+    color: #969ba1;
+    font-size: 11px;
+    /* align content to the left within the right grid column */
+    justify-self: start;
+    /* hide the column at first, and then only show on bigger screens */
+    display: none;
+}
+
+
+/* css for general right column text to match google's style */
+.right-column-info-text {
+    color: #969ba1;
+    font-size: 11px;
+}
+
+/* css for the example search text to match google's style */
+.right-column-example-search-text {
+    font-family: monospace;
+    font-size: 11px;
+    color: #dadce0;
+}
+
+/* only show the right column on devices with a minimum width of 1057px */
+@media (min-width: 1057px) {
+    /* show right column */
+    .right-column, .right-header {
+        display: block;
+    }
+    /* if right column shows, then middle column should be 520px */
+    .middle-column {
+        min-width: 520px;
+    }
+}
+
+/* css to make the input field look the same as google's */
+.custom-input {
+    background: #202124;
+    border: 1px solid #5f6368;
+    color: #bdc1c6;
+    width: 100%;
+    max-width: 520px;
+    height: 29px;
+    font-size: 13px;
+    padding: 1px 8px;
+    /* removes the default shine of the input field */
+    outline: none;
+}
+
+/* css to get the same border color as google when focused */
+.custom-input:focus {
+    border-color: #8ab4f8; /* light blue border color when focused */
+}
+
+/* css for the advanced search button to match google's style */
+.advanced_search_button {
+    color: #202124;
+    background-color: #8ab4f8;
+    border: 0;
+    border-radius: 2px;
+    height: 30px;
+    line-height: 27px;
+    padding: 0 12px;
+    min-width: 120px;
+    margin: 10px 0;
+    font-weight: bold;
+    font-size: 11px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* css for hover effect on the advanced search button */
+.advanced_search_button:hover {
+    background-color: #aecbfa;
+    /* simulate border with box-shadow */
+    box-shadow: 0 0 0 1px #3079ed;
+}
+
+/* css for focus effect on the advanced search button */
+.advanced_search_button:focus {
+    background-color: #aecbfa;
+    /* simulate border with box-shadow */
+    box-shadow: 0 0 0 2px #ffffff;
+}
