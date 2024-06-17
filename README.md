@@ -20,7 +20,7 @@ advanced_search.html: Template for Google Advanced Search.
 static/: Directory for static files like CSS and images.
 
 
-### Running the Application
+## Running the Application
 Having the following prerequisites:
 - Python 3.x
 - pip (Python package installer)
